@@ -11,9 +11,9 @@ from urllib.parse import urlparse #this is used to get schema of remote url
 # since we are using DAGsHub as our tracking server, we need to set the MLFLOW_TRACKING_URI
 import mlflow
 
-os.environ['MLFLOW_TRACKING_URI']="https://dagshub.com/abidalvi9/mlpipeline.mlflow"
+os.environ['MLFLOW_TRACKING_URI']="https://dagshub.com/abidalvi9/mlpipe.mlflow"
 os.environ['MLFLOW_TRACKING_USERNAME']="abidalvi9"
-os.environ["MLFLOW_TRACKING_PASSWORD"]="845e37b05ed8bb1118083c63855092fab32c2966 "
+os.environ["MLFLOW_TRACKING_PASSWORD"]="845e37b05ed8bb1118083c63855092fab32c2966"
 
 def hyperparameter_tuning(X_train,y_train,param_grid):
     rf=RandomForestClassifier()
@@ -30,7 +30,7 @@ def train(data_path,model_path,random_state,n_estimators,max_depth):
     X=data.drop(columns=["Outcome"])
     y=data['Outcome']
 
-    mlflow.set_tracking_uri("ttps://dagshub.com/abidalvi9/mlpipeline.mlflow")
+    mlflow.set_tracking_uri("https://dagshub.com/abidalvi9/mlpipe.mlflow")
 
 
     ## start the MLFLOW run
